@@ -17,19 +17,32 @@ const BingoBoard = () => {
     setLastCalled(newNumber);
   };
 
+  const resetGame = () => {
+    setCalledNumbers([]);
+    setLastCalled(null);
+  };
+
   return (
     <div className="max-w-4xl mx-auto p-6">
       <div className="flex justify-between items-center mb-8">
         <h1 className="text-3xl font-bold text-gray-800">Bingo Reactivo</h1>
-        <button 
-          onClick={callNumber}
-          className="px-6 py-3 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 transition-colors shadow-md"
-        >
-          Sacar Número
-        </button>
+        <div className="flex gap-4">
+          <button 
+            onClick={callNumber}
+            className="px-6 py-3 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 transition-colors shadow-md"
+          >
+            Sacar Número
+          </button>
+          <button 
+            onClick={resetGame}
+            className="px-6 py-3 bg-red-600 text-white font-semibold rounded-lg hover:bg-red-700 transition-colors shadow-md"
+          >
+            Reiniciar
+          </button>
+        </div>
       </div>
 
-      {lastCalled && (
+      {lastCalled !== null && (
         <div className="mb-8 text-center">
           <h2 className="text-xl font-semibold mb-4">Último número:</h2>
           <div className="flex justify-center">
@@ -52,3 +65,5 @@ const BingoBoard = () => {
 };
 
 export default BingoBoard;
+
+// DONE
