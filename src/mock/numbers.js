@@ -1,0 +1,1 @@
+export const BINGO_NUMBERS = Array.from({length: 91}, (_, i) => i);
