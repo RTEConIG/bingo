@@ -1,1 +1,3 @@
-# bingo
+# Bingo
+
+Bingo reactivo para escuelas
